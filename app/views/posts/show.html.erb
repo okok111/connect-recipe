@@ -30,6 +30,8 @@
             <%= c.user.email unless c.user.blank? %>
             <br>
             <%= c.content %>
+            <br>
+            <%= link_to "コメントを見る", post_comment_path(@post, c) %>
             </div>
             <br>
         <% end %>

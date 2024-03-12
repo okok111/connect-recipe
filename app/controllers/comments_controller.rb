@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
     before_action :authenticate_user!
-  
+    def show
+      @post = Post.find(params[:post_id])
+      @comment = Comment.find(params[:id])
+      @hoges = @comment.hoges
+      @hoge = Hoge.new
+    end
     def create
       post = Post.find(params[:post_id])
       comment = post.comments.build(comment_params) 

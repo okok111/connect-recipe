@@ -1,0 +1,21 @@
+<%= @hoge.content %>
+
+<% @hogehoges.each do |hogehoge| %>
+  <div>
+    <%= hogehoge.user.email unless hogehoge.user.blank? %>
+    <br>
+    <%= hogehoge.content %>
+    <br>
+    <%= link_to "Hogehogeを見る", post_comment_hoge_hogehoge_path(@post, @comment, @hoge, hogehoge) %>
+  </div>
+  <br>
+<% end %>
+<% if user_signed_in? %>
+  <%= form_with(model: [@hoge, @hogehoge], url: post_comment_hoge_hogehoges_path(@post, @comment, @hoge), local: true) do |f| %>
+    <%= f.hidden_field :hoge_id, value: @hogehoge.id %>
+    <%= f.text_area :content, placeholder: "コメントする内容を入力してください" %>
+    <%= button_tag type: "submit" do %>
+      <i class="far fa-comments"></i> コメントする
+    <% end %>
+  <% end %>
+<% end %>
