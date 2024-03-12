@@ -1,24 +1,11 @@
-# README
+# コメント機能まで実装したらすること
+前提：postsにcommentsがコメントするという状態の場合
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `rails g controller hoges`
+- `rails g controller hogehoges`
+- 各コントローラに記述していく
+- routes.rbの編集
+- ` rails g model Hoge content:string user:references post:references`
+- ` rails g model Hogehoge content:string user:references post:references`
+- 各モデルに記述していく
+- 各ビューファイルを編集していく

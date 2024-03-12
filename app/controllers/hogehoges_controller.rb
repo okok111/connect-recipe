@@ -5,10 +5,6 @@ class HogehogesController < ApplicationController
   before_action :set_hoge
   before_action :set_hogehoge, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @hogehoges = @hoge.hogehoges
-  end
-
   def show
     @hogehoge = Hogehoge.find(params[:id])
   end

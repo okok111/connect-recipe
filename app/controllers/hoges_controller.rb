@@ -4,10 +4,6 @@ class HogesController < ApplicationController
   before_action :set_comment
   before_action :set_hoge, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @hoges = @comment.hoges
-  end
-
   def show
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:comment_id])
