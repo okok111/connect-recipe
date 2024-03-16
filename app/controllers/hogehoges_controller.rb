@@ -21,7 +21,7 @@ class HogehogesController < ApplicationController
     hogehoge.user_id = current_user.id
     if hogehoge.save
       flash[:success] = "ホゲホゲを作成しました"
-      redirect_back(fallback_location: root_path)
+      redirect_to post_path(post)
     else
       flash[:error] = "ホゲホゲを作成できませんでした"
       redirect_back(fallback_location: root_path)

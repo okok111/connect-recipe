@@ -28,22 +28,28 @@
         <% @comments.each do |c| %>
             <div>
                 <br>
-                <h4><%= c.content %></h4>
-                <%= link_to "コメントを見る", post_comment_path(@post, c) %>
+                <h4>
+                    <%= c.content %>
+                    →<%= link_to "commets/showへ", post_comment_path(@post, c) %>
+                </h4>
             </div>
             <br>
             <% c.hoges.each do |h| %>
                 <div>
                     <br>
-                    <h5><%= h.content %></h5>
-                    <%= link_to "コメントを見る", post_comment_hoge_path(@post, c, h) %>
+                    <h5>
+                        <%= h.content %>
+                        →<%= link_to "hoges/showへ", post_comment_hoge_path(@post, c, h) %>
+                    </h5>
                 </div>
                 <br>
                 <% h.hogehoges.each do |hg| %>
                     <div>
                         <br>
-                        <h6><%= hg.content %></h6>
-                        <%= link_to "コメントを見る", post_comment_hoge_hogehoge_path(@post, c, h, hg) %>
+                        <h6>
+                            <%= hg.content %>
+                            →<%= link_to "hogehoges/showへ", post_comment_hoge_hogehoge_path(@post, c, h, hg) %>
+                        </h6>
                     </div>
                     <br>
                 <% end %>

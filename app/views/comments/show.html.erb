@@ -1,14 +1,24 @@
 <%= @comment.content%>
 
-<% @hoges.each do |hoge| %>
+<% @hoges.each do |h| %>
   <div>
-    <%= hoge.user.email unless hoge.user.blank? %>
     <br>
-    <%= hoge.content %>
+    <%= h.content %>
     <br>
-    <%= link_to "Hogeを見る", post_comment_hoge_path(@post, @comment, hoge) %>
+    <%= link_to "hoges/showへ", post_comment_hoge_path(@post, @comment, h) %>
   </div>
   <br>
+  <% h.hogehoges.each do |hg| %>
+      <div>
+          <br>
+          <h6>
+              <%= hg.content %>
+              →<%= link_to "hogehoges/showへ", post_comment_hoge_hogehoge_path(@post, c, h, hg) %>
+          </h6>
+      </div>
+      <br>
+  <% end %>
+  <hr>
 <% end %>
 
 <% if user_signed_in? %>
